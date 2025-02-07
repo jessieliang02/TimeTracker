@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("Tab Time Tracker: Content script loaded")})();
