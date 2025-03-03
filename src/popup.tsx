@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { StorageManager } from '@/utils/storage';
 import { DailyStats } from '@/types';
+import { Settings } from '@/components/Settings';
 import './styles.css';
 
 const storage = StorageManager.getInstance();
@@ -105,7 +106,7 @@ function PopupApp() {
                 </TabsContent>
 
                 <TabsContent value="settings">
-                    <p className="text-muted-foreground">Settings view coming soon...</p>
+                    <Settings />
                 </TabsContent>
             </Tabs>
         </div>

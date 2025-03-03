@@ -33,11 +33,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.json$/,
+        type: 'json'
       }
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -55,7 +59,11 @@ module.exports = {
           to: '.',
           noErrorOnMissing: true
         },
-        { from: 'manifest.json', to: '.' }
+        { from: 'manifest.json', to: '.' },
+        { 
+          from: 'src/data/*.json',
+          to: 'data/[name][ext]'
+        }
       ]
     })
   ],
